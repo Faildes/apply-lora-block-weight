@@ -81,15 +81,15 @@ def do(input_, output, ratios):
                 tensors[key] *= RATIO_OF_[blockid]
                 print(f"({blockid}) {compvis_name} "
                       f"updated with factor {RATIO_OF_[blockid]}")
-
+        """
         metadata = f.metadata()
         model_hash, legacy_hash = safetensors_hashes(tensors, metadata)
         output_name = os.path.splitext(os.path.basename(SAVE_PATH))[0]
         metadata['ss_output_name'] = output_name
         metadata['sshs_model_hash'] = model_hash
         metadata['sshs_legacy_hash'] = legacy_hash
-
-        save_file(tensors, SAVE_PATH, metadata)
+"""
+        save_file(tensors, SAVE_PATH)
 
     print("Done")
 
